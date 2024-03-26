@@ -9,7 +9,27 @@ export default {
   data() {
     return {
       rounds: [
-        {
+      {
+          games: [
+            {
+              player1: { id: "1", name: "Competitor 1", winner: false },
+              player2: { id: "4", name: "Competitor 4", winner: true },
+            },
+            {
+              player1: { id: "5", name: "Competitor 5", winner: false },
+              player2: { id: "8", name: "Competitor 8", winner: true },
+            },
+            {
+              player1: { id: "10", name: "Competitor 10", winner: false },
+              player2: { id: "12", name: "Competitor 12", winner: true },
+            },
+            {
+              player1: { id: "10", name: "Competitor 10", winner: false },
+              player2: { id: "12", name: "Competitor 12", winner: true },
+            }
+          ]
+        },  
+      {
           games: [
             {
               player1: { id: "1", name: "Competitor 1", winner: false },
@@ -29,8 +49,10 @@ export default {
             }
           ]
         }
+        
       ]
-    };
+    }
+    ;
   }
 };
 </script>
