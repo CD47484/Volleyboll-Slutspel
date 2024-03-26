@@ -1,45 +1,47 @@
-<script setup>
+
+<script>
+import VueTournamentBracket from 'vue-tournament-bracket';
+
+export default {
+  components: {
+    VueTournamentBracket,
+  },
+  data() {
+    return {
+      rounds: [
+        {
+          games: [
+            {
+              player1: { id: "1", name: "Competitor 1", winner: false },
+              player2: { id: "4", name: "Competitor 4", winner: true },
+            },
+            {
+              player1: { id: "5", name: "Competitor 5", winner: false },
+              player2: { id: "8", name: "Competitor 8", winner: true },
+            }
+          ]
+        },
+        {
+          games: [
+            {
+              player1: { id: "4", name: "Competitor 4", winner: false },
+              player2: { id: "8", name: "Competitor 8", winner: true },
+            }
+          ]
+        }
+      ]
+    };
+  }
+};
 </script>
 
+
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <vue-tournament-bracket :rounds="rounds">
+      <template v-slot:player="{ player }">
+        {{ player.name }}
+      </template>
+    </vue-tournament-bracket>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
