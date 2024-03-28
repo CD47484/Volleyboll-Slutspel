@@ -60,10 +60,9 @@ export default {
   },
   methods: {
     getPlayerClass(player) {
-      // getPlayerClass method remains the same
     },
     toggleDropdown(player) {
-      // Close all dropdowns except the one clicked
+      // stäng ner den första dropdownen när man öppnar en ny
       this.rounds.forEach(round => {
         round.games.forEach(game => {
           if (game.player1 !== player && game.player1.showDropdown) {
@@ -74,9 +73,9 @@ export default {
           }
         });
       });
-      // Toggle showDropdown value of the clicked player
+      // Ttoggle dropdown
       player.showDropdown = !player.showDropdown;
-      // Set special text based on player ID
+      // speciel text med id
       switch (player.id) {
         case "1":
           player.specialText = "Text ID 1";
@@ -84,7 +83,7 @@ export default {
         case "4":
           player.specialText = "Text ID 4";
           break;
-        // Add more cases for other player IDs as needed
+        // om det inte finns inte information
         default:
           player.specialText = "No information";
           break;
