@@ -76,10 +76,22 @@ export default {
       });
       // Toggle showDropdown value of the clicked player
       player.showDropdown = !player.showDropdown;
+      // Set special text based on player ID
+      switch (player.id) {
+        case "1":
+          player.specialText = "Text ID 1";
+          break;
+        case "4":
+          player.specialText = "Text ID 4";
+          break;
+        // Add more cases for other player IDs as needed
+        default:
+          player.specialText = "No information";
+          break;
+      }
     }
   }
 }
-
 </script>
 
 
@@ -91,10 +103,7 @@ export default {
           {{ player.name }}
         </span>
         <div v-if="player.showDropdown" class="dropdown">
-          <ul>
-            <li>Option 1</li>
-            <li>Option 2</li>
-          </ul>
+          <p>{{ player.specialText }}</p>
         </div>
       </template>
     </vue-tournament-bracket>
@@ -107,20 +116,24 @@ export default {
   display: flex;
 }
 
-
 .dropdown {
   position: absolute;
-  background-color: #000000;
+  background-color: black; 
+  color: white;
   min-width: 160px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   padding: 12px 16px;
   z-index: 1;
 }
+
+.dropdown p {
+  background-color: black !important;
+}
+
 .vtb-wrapper {
   position: relative; 
   left: 50%;
 }
-
 
 .vtb-item-players .not-started {
   background-color: gray !important;
@@ -133,5 +146,4 @@ export default {
 .vtb-item-players .defeated {
   background-color: red !important;
 }
-
 </style>
