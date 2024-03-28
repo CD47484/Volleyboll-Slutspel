@@ -60,9 +60,21 @@ export default {
   },
   methods: {
     getPlayerClass(player) {
-
+      // getPlayerClass method remains the same
     },
     toggleDropdown(player) {
+      // Close all dropdowns except the one clicked
+      this.rounds.forEach(round => {
+        round.games.forEach(game => {
+          if (game.player1 !== player && game.player1.showDropdown) {
+            game.player1.showDropdown = false;
+          }
+          if (game.player2 !== player && game.player2.showDropdown) {
+            game.player2.showDropdown = false;
+          }
+        });
+      });
+      // Toggle showDropdown value of the clicked player
       player.showDropdown = !player.showDropdown;
     }
   }
