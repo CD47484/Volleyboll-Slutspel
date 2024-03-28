@@ -59,16 +59,13 @@ export default {
     ;
   },
   methods: {
-  getPlayerClass(player) {
-    if (player.winner === true) {
-      return 'winner';
-    } else if (player.winner === false) {
-      return 'loser';
-    } else {
-      return 'not-started';
+    getPlayerClass(player) {
+
+    },
+    toggleDropdown(player) {
+      player.showDropdown = !player.showDropdown;
     }
   }
-}
 }
 
 </script>
@@ -76,11 +73,17 @@ export default {
 
 <template>
   <div class="container">
-    <!-- visa vad som finns i bracketseb -->
     <vue-tournament-bracket :rounds="rounds">
-      <!-- visa namnen på spelare -->
       <template v-slot:player="{ player }">
-        <span :class="getPlayerClass(player)">{{ player.name }}</span>
+        <span :class="getPlayerClass(player)" @click="toggleDropdown(player)">
+          {{ player.name }}
+        </span>
+        <div v-if="player.showDropdown" class="dropdown">
+          <ul>
+            <li>Option 1</li>
+            <li>Option 2</li>
+          </ul>
+        </div>
       </template>
     </vue-tournament-bracket>
   </div>
@@ -92,6 +95,15 @@ export default {
   display: flex;
 }
 
+
+.dropdown {
+  position: absolute;
+  background-color: #000000;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
 .vtb-wrapper {
   position: relative; 
   left: 50%;
