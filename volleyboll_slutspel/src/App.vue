@@ -16,18 +16,26 @@ export default {
           games: [
             {
               // Datan inom bracketsen
-              player1: { id: "1", name: "Competitor 1", winner: "not-started" },
+              id:1,
+              next:5,
+              player1: { id: "1", name: "Competitor 1", winner: null },
               player2: { id: "4", name: "Competitor 4", winner: false },
             },
             {
+              id:2,
+              next:5,
               player1: { id: "5", name: "Competitor 5", winner: false },
               player2: { id: "8", name: "Competitor 8", winner: true },
             },
             {
+              id:3,
+              next:6,
               player1: { id: "10", name: "Competitor 10", winner: false },
               player2: { id: "12", name: "Competitor 12", winner: true },
             },
             {
+              id:4,
+              next:6,
               player1: { id: "10", name: "Competitor 10", winner: false },
               player2: { id: "12", name: "Competitor 12", winner: true },
             }
@@ -36,10 +44,14 @@ export default {
       {
           games: [
             {
+              id:5,
+              next:7,
               player1: { id: "1", name: "Competitor 1", winner: false },
               player2: { id: "4", name: "Competitor 4", winner: true },
             },
             {
+              id:6,
+              next:7,
               player1: { id: "5", name: "Competitor 5", winner: false },
               player2: { id: "8", name: "Competitor 8", winner: true },
             }
@@ -48,6 +60,7 @@ export default {
         {
           games: [
             {
+              id:7,
               player1: { id: "4", name: "Competitor 4", winner: false },
               player2: { id: "8", name: "Competitor 8", winner: true },
             }
@@ -64,8 +77,6 @@ export default {
       return 'winner';
     } else if (player.winner === false) {
       return 'loser';
-    } else {
-      return 'not-started';
     }
   }
 }
@@ -93,21 +104,31 @@ export default {
 }
 
 .vtb-wrapper {
-  position: relative; 
-  left: 50%;
-}
-
-
-.vtb-item-players .not-started {
-  background-color: gray !important;
+  position: absolute; 
+  bottom:20%!important;
+  left:5%;
+  padding:0%;
 }
 
 .vtb-item-players .winner {
   background-color: greenyellow !important;
+  
+}
+
+.vtb-item-players, .vtb-item-players .winner, .vtb-item-players .defeated {
+  width:20em;
+  
+
 }
 
 .vtb-item-players .defeated {
   background-color: red !important;
+}
+
+@media only screen and (max-height:400px){
+  .vtb-wrapper{
+    top: 55%;
+  }
 }
 
 </style>
