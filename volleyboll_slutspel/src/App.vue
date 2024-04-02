@@ -96,8 +96,8 @@ export default {
   }
 }
 </script>
+
 <template>
-  <div class="container">
     <vue-tournament-bracket :rounds="rounds">
       <template v-slot:player="{ player }">
         <span :class="getPlayerClass(player)" @click="toggleDropdown(player)">
@@ -108,12 +108,15 @@ export default {
         </div>
       </template>
     </vue-tournament-bracket>
-  </div>
 </template>
+
 <style>
-.container {
-  display: flex;
+
+.vtb-item{
+
+  height: 7em;
 }
+
 .dropdown {
   position: absolute;
   background-color: black; 
@@ -128,7 +131,7 @@ export default {
 }
 .vtb-wrapper {
   position: absolute; 
-  bottom:20%!important;
+  bottom:30%!important;
   left:5%;
   padding:0%;
 }
@@ -136,7 +139,7 @@ export default {
   background-color: gray !important;
 }
 .vtb-item-players, .vtb-item-players .winner, .vtb-item-players .defeated {
-  width:20em;
+  width:15em;
 }
 .vtb-item-players .winner {
   background-color: greenyellow !important;
