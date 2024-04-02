@@ -1,6 +1,7 @@
 <script>
 // Importera vue-tournament-bracket
 import VueTournamentBracket from 'vue-tournament-bracket';
+
 export default {
   components: {
      // Registrera VueTournamentBracket
@@ -66,9 +67,12 @@ export default {
       this.rounds.forEach(round => {
         round.games.forEach(game => {
           if (game.player1 !== player && game.player1.showDropdown) {
-        export default {
-          }
-        });
+            game.player1.showDropdown = false;
+         }
+         if (game.player2 !== player && game.player2.showDropdown) {
+          game.player2.showDropdown = false;
+         }
+      });
       });
       // Toggle showDropdown value of the clicked player
       // Ttoggle dropdown
