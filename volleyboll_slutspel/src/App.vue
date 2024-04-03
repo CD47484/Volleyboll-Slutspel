@@ -112,9 +112,11 @@ export default {
 <template>
   <vue-tournament-bracket :rounds="rounds">
     <template v-slot:player="{ player }">
-      <span :class="getPlayerClass(player)" @click="toggleDropdown(player)">
-        {{ player.name }}
-      </span>
+      <div class="popup-trigger" @click="toggleDropdown(player)">
+        <span :class="getPlayerClass(player)">
+          {{ player.name }}
+        </span>
+      </div>
       <div v-if="player.showDropdown" class="dropdown">
         <p>{{ player.specialText }}</p>
       </div>
@@ -123,7 +125,16 @@ export default {
 </template>
 
 
+
 <style>
+
+.popup-trigger {
+  padding: 10px;
+  cursor: pointer; 
+}
+
+
+
 
 .vtb-item{
 
@@ -162,7 +173,7 @@ export default {
 }
 @media only screen and (max-height:400px){
   .vtb-wrapper{
-    top: 55%;
+    top: 45%;
   }
 }
 </style>
