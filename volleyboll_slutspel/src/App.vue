@@ -130,13 +130,6 @@ export default {
 
 
 
-
-
-.vtb-item{
-
-  height: 7em;
-}
-
 .dropdown {
   position: absolute;
   background-color: black; 
