@@ -153,7 +153,6 @@ export default {
   position: absolute; 
   bottom:30%!important;
   left:5%;
-  padding:0%;
 }
 .vtb-item-players .not-started {
   background-color: gray !important;
