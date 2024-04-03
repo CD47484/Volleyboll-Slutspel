@@ -138,6 +138,7 @@ export default {
   left:0%;
   right:0%;
   height:3em;
+  border: solid black;
 }
 
 .dropdown {
