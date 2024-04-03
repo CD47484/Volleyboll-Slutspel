@@ -110,6 +110,9 @@ export default {
 </script>
 
 <template>
+  <div class="nav">
+
+  </div>
   <vue-tournament-bracket :rounds="rounds">
     <template v-slot:player="{ player }">
       <div class="popup-trigger" @click="toggleDropdown(player)">
@@ -128,7 +131,14 @@ export default {
 
 <style>
 
-
+.nav {
+  background-color: blue;
+  position:fixed;
+  top:0%;
+  left:0%;
+  right:0%;
+  height:3em;
+}
 
 .dropdown {
   position: absolute;
