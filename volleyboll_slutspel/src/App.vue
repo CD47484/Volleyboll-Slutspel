@@ -128,10 +128,6 @@ export default {
 
 <style>
 
-.popup-trigger {
-  padding: 10px;
-  cursor: pointer; 
-}
 
 
 
@@ -162,7 +158,7 @@ export default {
 .vtb-item-players .not-started {
   background-color: gray !important;
 }
-.vtb-item-players, .vtb-item-players .winner, .vtb-item-players .defeated {
+.vtb-item-players, .vtb-item-players .winner, .vtb-item-players .defeated, .popup-trigger {
   width:15em;
 }
 .vtb-item-players .winner {
