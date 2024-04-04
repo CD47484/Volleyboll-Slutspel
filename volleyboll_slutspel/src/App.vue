@@ -115,6 +115,9 @@ export default {
 <template>
 
   <div class="nav">
+    <div class="logo">
+      <img class="volleyimg" src="@/assets/volleyboll.png">
+    </div>
 
     
   </div>
@@ -142,7 +145,24 @@ export default {
   top:0%;
   left:0%;
   right:0%;
-  height:3em;
+  height:3.5em;
+  border: solid black;
+  z-index:100;
+}
+
+.volleyimg {
+  position:fixed;
+  z-index:150;
+  height:3.2em;
+  width:3.2em;
+}
+
+.logo {
+  background-color:black;
+  position:fixed;
+  z-index:150;
+  height:3.2em;
+  width:3.2em;
 }
 
 .dropdown {
