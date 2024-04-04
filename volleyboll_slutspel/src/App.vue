@@ -116,7 +116,7 @@ export default {
 
   <div class="nav">
     <div class="logo">
-      <img class="volleyimg" src="@/assets/volleyboll.png">
+      <img class="volleyimg" src="@/assets/volleybollnobg.png">
     </div>
     <button class="hamburger"></button>  
   </div>
@@ -151,21 +151,22 @@ export default {
 
 .hamburger{
   background-image: url(./assets/hamburger.png);
-  position: relative;
-  width: 54px;
-  height: 47px;
-  left: 69%;
+  background-color:transparent;
+  border:transparent;
+  position: fixed;
+  width: 3.8em;
+  height: 3.9em;
+  right: 0%;
 }
 
 .volleyimg {
   position:fixed;
   z-index:150;
-  height:3.2em;
-  width:3.2em;
+  height:3.5em;
+  width:3.5em;
 }
 
 .logo {
-  background-color:black;
   position:fixed;
   z-index:150;
   height:3.2em;
@@ -198,7 +199,7 @@ export default {
   width:15em;
 }
 .vtb-item-players .winner {
-  background-color: greenyellow !important;
+  background-color: green !important;
 }
 .vtb-item-players .defeated {
   background-color: red !important;
