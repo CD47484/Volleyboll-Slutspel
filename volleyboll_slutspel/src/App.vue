@@ -118,9 +118,8 @@ export default {
     <div class="logo">
       <img class="volleyimg" src="@/assets/volleyboll.png">
     </div>
-
-    
   </div>
+  
   <vue-tournament-bracket :rounds="rounds">
     <template v-slot:player="{ player }">
       <div class="popup-trigger" @click="toggleDropdown(player)">
@@ -146,7 +145,6 @@ export default {
   left:0%;
   right:0%;
   height:3.5em;
-  border: solid black;
   z-index:100;
 }
 
