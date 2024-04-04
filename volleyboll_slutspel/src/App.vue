@@ -15,7 +15,7 @@ export default {
           games: [
             {
               // Datan inom bracketsen
-              player1: { id: "1", name: "Deltagare 1", winner: "not-started" },
+              player1: { id: "2", name: "Deltagare 2", winner: "not-started" },
               player2: { id: "4", name: "Deltagare 4", winner: false },
             },
             {
@@ -35,7 +35,7 @@ export default {
       {
           games: [
             {
-              player1: { id: "1", name: "Deltagare 1", winner: false },
+              player1: { id: "2", name: "Deltagare 2", winner: false },
               player2: { id: "4", name: "Deltagare 4", winner: true },
             },
             {
@@ -47,8 +47,8 @@ export default {
         {
           games: [
             {
-              player1: { id: "4", name: "Deltagare 4", winner: false },
-              player2: { id: "8", name: "Deltagare 8", winner: true },
+              player1: { id: "1", name: "väntar spelare", winner: null },
+              player2: { id: "1", name: "väntar spelare", winner: null },
             }
           ]
         }
@@ -77,7 +77,10 @@ export default {
       // sätt text beroende på dropdown
       switch (player.id) {
         case "1":
-          player.specialText = "Text ID 1";
+          player.specialText = "väntar spelare";
+          break;
+        case "2":
+          player.specialText = "Text ID 2";
           break;
         case "4":
           player.specialText = "Text ID 4";
@@ -110,6 +113,7 @@ export default {
 </script>
 
 <template>
+
   <div class="nav">
     <div class="logo">
       <img class="volleyimg" src="@/assets/volleyboll.png">
@@ -182,8 +186,10 @@ export default {
 }
 .vtb-wrapper {
   position: absolute; 
+  top: 20% !important;
   bottom:30%!important;
   left:5%;
+  display: block !important;
 }
 .vtb-item-players .not-started {
   background-color: gray !important;
@@ -198,8 +204,12 @@ export default {
   background-color: red !important;
 }
 @media only screen and (max-height:400px){
-  .vtb-wrapper{
-    top: 45%;
+  .vtb-wrapper {
+    position: relative; 
+    top: auto; 
+    bottom: 20%; 
+    left: 5%; 
+    width: 90%; 
   }
 }
 </style>
