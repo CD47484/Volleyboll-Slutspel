@@ -118,11 +118,12 @@ export default {
     <div class="logo">
       <img class="volleyimg" src="@/assets/volleyboll.png">
     </div>
+    <button class="hamburger"></button>  
   </div>
   
   <vue-tournament-bracket :rounds="rounds">
     <template v-slot:player="{ player }">
-      <div class="popup-trigger" @click="toggleDropdown(player)">
+      <div class="popup-trigger" @click.stop="toggleDropdown(player)">
         <span :class="getPlayerClass(player)">
           {{ player.name }}
         </span>
@@ -146,6 +147,14 @@ export default {
   right:0%;
   height:3.5em;
   z-index:100;
+}
+
+.hamburger{
+  background-image: url(./assets/hamburger.png);
+  position: relative;
+  width: 54px;
+  height: 47px;
+  left: 69%;
 }
 
 .volleyimg {
