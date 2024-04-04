@@ -199,18 +199,12 @@ export default {
   width:15em;
 }
 .vtb-item-players .winner {
-  background-color: green !important;
+  background-color: rgb(5, 171, 5) !important;
 }
 .vtb-item-players .defeated {
   background-color: red !important;
 }
 @media only screen and (max-height:400px){
-  .vtb-wrapper {
-    position: relative; 
-    top: auto; 
-    bottom: 20%; 
-    left: 5%; 
-    width: 90%; 
-  }
+
 }
 </style>
