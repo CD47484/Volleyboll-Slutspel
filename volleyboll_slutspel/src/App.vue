@@ -155,8 +155,9 @@ export default {
   border:transparent;
   position: fixed;
   width: 3.8em;
-  height: 3.9em;
-  right: 0%;
+  height:3.2em;
+  top:1%;
+  right: 2%;
 }
 
 .volleyimg {
