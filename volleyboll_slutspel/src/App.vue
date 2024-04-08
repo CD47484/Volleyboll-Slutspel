@@ -61,6 +61,8 @@ export default {
     ;
   },
   methods: {
+    getPlayerClass(player){
+    },
     toggleDropdown(player) {
       // Stäng alla dropdown förutom den som klickades
       this.rounds.forEach(round => {
