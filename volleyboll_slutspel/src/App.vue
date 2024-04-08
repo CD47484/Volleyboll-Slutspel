@@ -133,17 +133,20 @@ export default {
       </div>
     </template>
   </vue-tournament-bracket>
+<<<<<<< HEAD
+  <div class="box">
+    <p class="boxtext">Most points: IT21</p>
+    <p class="boxtext">Best W/L: IT21</p>
+    <p class="boxtext">Price: Pizza</p>
+  </div>
+=======
 
   <div class="phone-container">
   <img class="phone-img" src="https://cdn-icons-png.freepik.com/512/68/68737.png" alt="turn the phone">
   </div>
 
 
-  <div class="box">
-    <p class="boxtext">Most points: IT21</p>
-    <p class="boxtext">Best W/L: IT21</p>
-    <p class="boxtext">Price: Pizza</p>
-  </div>
+>>>>>>> 5e835346ab02e33e3f2f627e3f4545d981ec9d6c
 </template>
 
 
@@ -247,7 +250,8 @@ export default {
   right:0px;
   bottom:auto;
 }
-}
+<<<<<<< HEAD
+=======
 
 @media only screen and (max-width:450px){
   .phone-img {
@@ -286,6 +290,7 @@ export default {
 }
 
 
+>>>>>>> 5e835346ab02e33e3f2f627e3f4545d981ec9d6c
 }
 
 </style>
