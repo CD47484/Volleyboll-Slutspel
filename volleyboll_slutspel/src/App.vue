@@ -13,6 +13,7 @@ export default {
       rounds: [
       {
           games: [
+            //fist game
             {
               // Datan inom bracketsen
               player1: { id: "2", name: "Deltagare 2", winner: true },
@@ -33,6 +34,7 @@ export default {
           ]
         },  
       {
+        //second game
           games: [
             {
               player1: { id: "2", name: "Deltagare 2", winner: false },
@@ -46,6 +48,7 @@ export default {
         },
         {
           games: [
+            //last game
             {
               player1: { id: "1", name: "väntar spelare", winner: null },
               player2: { id: "1", name: "väntar spelare", winner: null },
@@ -58,8 +61,6 @@ export default {
     ;
   },
   methods: {
-    getPlayerClass(player) {
-    },
     toggleDropdown(player) {
       // Stäng alla dropdown förutom den som klickades
       this.rounds.forEach(round => {
@@ -138,15 +139,12 @@ export default {
   <img class="phone-img" src="https://cdn-icons-png.freepik.com/512/68/68737.png" alt="turn the phone">
   </div>
 
-
   <div class="box">
     <p class="boxtext">Most points: IT21</p>
     <p class="boxtext">Best W/L: IT21</p>
     <p class="boxtext">Price: Pizza</p>
   </div>
 </template>
-
-
 
 <style>
 
@@ -236,7 +234,6 @@ export default {
   display: none;
   }
 
-
 @media only screen and (max-height:600px){
   .box {
   position:absolute;
@@ -287,5 +284,4 @@ export default {
 
 
 }
-
 </style>
