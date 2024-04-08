@@ -133,11 +133,31 @@ export default {
       </div>
     </template>
   </vue-tournament-bracket>
+  <div class="box">
+    <p class="boxtext">Most points: IT21</p>
+    <p class="boxtext">Best W/L: IT21</p>
+    <p class="boxtext">Price: Pizza</p>
+  </div>
 </template>
 
 
 
 <style>
+
+.box {
+  position:absolute;
+  border: solid black;
+  border-radius:30px;
+  text-align: center;
+  bottom:0%;
+  right:0%;
+  margin:5%;
+}
+
+.boxtext {
+  font-size:1.2em;
+  padding:3%;
+}
 
 .nav {
   background-color: blue;
@@ -205,7 +225,17 @@ export default {
 .vtb-item-players .defeated {
   background-color: red !important;
 }
-@media only screen and (max-height:400px){
 
+@media only screen and (max-height:600px){
+  .box {
+  position:absolute;
+  border: solid black;
+  border-radius:30px;
+  text-align: center;
+  top:400px;
+  right:0px;
+  bottom:auto;
 }
+}
+
 </style>
