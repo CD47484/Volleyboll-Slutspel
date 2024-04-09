@@ -169,15 +169,12 @@ document.addEventListener("DOMContentLoaded", function() {
     <p class="boxtext">Price: Pizza</p>
   </div>
 
-  <div class="phone-container">
-  <img class="phone-img" src="https://cdn-icons-png.freepik.com/512/68/68737.png" alt="turn the phone">
-  </div>
 
 </template>
 
 <style>
 
-.body{
+body{
   min-height: 200vh !important;
   min-width: 300vh !important;
 }
