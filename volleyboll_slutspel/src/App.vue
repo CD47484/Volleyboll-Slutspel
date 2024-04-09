@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 .plus{
-  position:fixed;
+  position:fixed!important;
   bottom:5px;
   right:5px;
   height:48px;
@@ -202,12 +202,12 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 .box {
-  position:fixed;
+  position:fixed!important;
   border: solid black;
   border-radius:30px;
   text-align: center;
-  bottom:5px;
-  right:55px;
+  bottom:20px;
+  right:50px;
   display:none;
 }
 
@@ -321,18 +321,5 @@ document.addEventListener("DOMContentLoaded", function() {
     height:4.5em;
     z-index:200;
   }
-}
-
-@media only screen and (max-height:600px){
-  .box {
-  position:absolute;
-  border: solid black;
-  border-radius:30px;
-  text-align: center;
-  top:400px;
-  right:0px;
-  bottom:auto;
-}
-
 }
 </style>
