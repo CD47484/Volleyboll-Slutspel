@@ -13,23 +13,34 @@ export default {
       rounds: [
       {
           games: [
+            //last game
+            {
+              // Datan inom bracketsen
+              player1: { id: "2", name: "Deltagare 2", winner: true, points: 10  },
+              player2: { id: "4", name: "Deltagare 4", winner: false, points: 1  },
+            },
+
+          ]
+        },
+      {
+          games: [
             //fist game
             {
               // Datan inom bracketsen
-              player1: { id: "2", name: "Deltagare 2", winner: true },
-              player2: { id: "4", name: "Deltagare 4", winner: false },
+              player1: { id: "2", name: "Deltagare 2", winner: true, points: 3 },
+              player2: { id: "4", name: "Deltagare 4", winner: false, points: 14 },
             },
             {
-              player1: { id: "5", name: "Deltagare 5", winner: false },
-              player2: { id: "8", name: "Deltagare 8", winner: true },
+              player1: { id: "5", name: "Deltagare 5 24", winner: false, points: 9 },
+              player2: { id: "8", name: "Deltagare 8", winner: true, points: 7 },
             },
             {
-              player1: { id: "10", name: "Deltagare 10", winner: false },
-              player2: { id: "12", name: "Deltagare 12", winner: true },
+              player1: { id: "10", name: "Deltagare 10", winner: false, points: 4 },
+              player2: { id: "12", name: "Deltagare 12", winner: true, points: 6 },
             },
             {
-              player1: { id: "10", name: "Deltagare 10", winner: false },
-              player2: { id: "12", name: "Deltagare 12", winner: true },
+              player1: { id: "10", name: "Deltagare 10", winner: false, points: 10 },
+              player2: { id: "12", name: "Deltagare 12", winner: true, points: 15 },
             }
           ]
         },  
@@ -37,12 +48,12 @@ export default {
         //second game
           games: [
             {
-              player1: { id: "2", name: "Deltagare 2", winner: false },
-              player2: { id: "4", name: "Deltagare 4", winner: true },
+              player1: { id: "2", name: "Deltagare 2", winner: false, points: 1 },
+              player2: { id: "4", name: "Deltagare 4", winner: true, points: 12 },
             },
             {
-              player1: { id: "5", name: "Deltagare 5", winner: false },
-              player2: { id: "8", name: "Deltagare 8", winner: true },
+              player1: { id: "5", name: "Deltagare 5", winner: false, points: 82 },
+              player2: { id: "8", name: "Deltagare 8", winner: true, points: 2 },
             }
           ]
         },
@@ -136,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <template v-slot:player="{ player }">
       <div class="popup-trigger" @click.stop="toggleDropdown(player)">
         <span :class="getPlayerClass(player)">
-          {{ player.name }}
+          {{ player.name }} <span class="points">{{ player.points }}</span>
         </span>
       </div>
       <div v-if="player.showDropdown" class="dropdown">
@@ -165,6 +176,22 @@ document.addEventListener("DOMContentLoaded", function() {
 </template>
 
 <style>
+
+.body{
+  min-height: 200vh !important;
+  min-width: 300vh !important;
+}
+
+.points{
+  position: absolute;
+  display: inline-grid;
+  background-color: black;
+  border-radius: 3px;
+  left: 200px;
+  width: 20px;
+  text-align: center;
+}
+
 
 .plus{
   position:fixed;
@@ -259,4 +286,53 @@ document.addEventListener("DOMContentLoaded", function() {
 .phone-img {
   display: none;
   }
+
+  
+@media only screen and (max-width:450px){
+  .phone-img {
+    display: flex;
+    height: 40%;
+    width: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 150; 
+  }
+  .phone-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 128, 0); 
+    z-index: 100; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 149;
+  }
+  .nav {
+    background-color: blue;
+    position:fixed;
+    top:0%;
+    left:0%;
+    right:0%;
+    height:4.5em;
+    z-index:200;
+  }
+}
+
+@media only screen and (max-height:600px){
+  .box {
+  position:absolute;
+  border: solid black;
+  border-radius:30px;
+  text-align: center;
+  top:400px;
+  right:0px;
+  bottom:auto;
+}
+
+}
 </style>
