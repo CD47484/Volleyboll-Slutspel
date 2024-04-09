@@ -31,7 +31,7 @@ export default {
               player2: { id: "4", name: "Deltagare 4", winner: false, points: 14 },
             },
             {
-              player1: { id: "5", name: "Deltagare 5", winner: false, points: 9 },
+              player1: { id: "5", name: "Deltagare 5 24", winner: false, points: 9 },
               player2: { id: "8", name: "Deltagare 8", winner: true, points: 7 },
             },
             {
@@ -139,7 +139,7 @@ export default {
     <template v-slot:player="{ player }">
       <div class="popup-trigger" @click.stop="toggleDropdown(player)">
         <span :class="getPlayerClass(player)">
-          {{ player.name }} <div class="points-container"><span class="points">{{ player.points }}</span></div>
+          {{ player.name }} <span class="points">{{ player.points }}</span>
         </span>
       </div>
       <div v-if="player.showDropdown" class="dropdown">
@@ -166,15 +166,13 @@ export default {
 
 <style>
 
-.points-container {
+.points{
+  position: absolute;
   display: inline-grid;
   background-color: black;
   border-radius: 3px;
-  margin-left: 100px;
+  left: 200px;
   width: 20px;
-}
-
-.points{
   text-align: center;
 }
 
