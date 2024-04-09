@@ -124,6 +124,14 @@ export default {
     document.removeEventListener("click", this.closeDropdownsOnClickOutside);
   }
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const plusImg = document.querySelector('.plus-img');
+    const box = document.querySelector('.box');
+
+    plusImg.addEventListener('click', function() {
+        box.style.display = (box.style.display === 'none') ? 'block' : 'none';
+    });
+});
 </script>
 
 <template>
@@ -152,6 +160,9 @@ export default {
   <img class="phone-img" src="https://cdn-icons-png.freepik.com/512/68/68737.png" alt="turn the phone">
   </div>
 
+  <div class="plus">
+    <img class="plus-img" src="./assets/plus.png">
+  </div>
   <div class="box">
     <p class="boxtext">Most points: IT21</p>
     <p class="boxtext">Best W/L: IT21</p>
@@ -179,14 +190,22 @@ body{
 }
 
 
+.plus{
+  position:fixed;
+  bottom:5px;
+  right:5px;
+  height:48px;
+  width:48px;
+}
+
 .box {
-  position:absolute;
+  position:fixed;
   border: solid black;
   border-radius:30px;
   text-align: center;
-  bottom:0%;
-  right:0%;
-  margin:5%;
+  bottom:5px;
+  right:55px;
+  display:none;
 }
 
 .boxtext {
