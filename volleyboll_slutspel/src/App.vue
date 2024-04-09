@@ -166,6 +166,11 @@ export default {
 
 <style>
 
+.body{
+  min-height: 200vh !important;
+  min-width: 300vh !important;
+}
+
 .points{
   position: absolute;
   display: inline-grid;
