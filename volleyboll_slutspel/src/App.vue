@@ -13,23 +13,34 @@ export default {
       rounds: [
       {
           games: [
+            //last game
+            {
+              // Datan inom bracketsen
+              player1: { id: "2", name: "Deltagare 2", winner: true, points: 10  },
+              player2: { id: "4", name: "Deltagare 4", winner: false, points: 1  },
+            },
+
+          ]
+        },
+      {
+          games: [
             //fist game
             {
               // Datan inom bracketsen
-              player1: { id: "2", name: "Deltagare 2", winner: true },
-              player2: { id: "4", name: "Deltagare 4", winner: false },
+              player1: { id: "2", name: "Deltagare 2", winner: true, points: 3 },
+              player2: { id: "4", name: "Deltagare 4", winner: false, points: 14 },
             },
             {
-              player1: { id: "5", name: "Deltagare 5", winner: false },
-              player2: { id: "8", name: "Deltagare 8", winner: true },
+              player1: { id: "5", name: "Deltagare 5", winner: false, points: 9 },
+              player2: { id: "8", name: "Deltagare 8", winner: true, points: 7 },
             },
             {
-              player1: { id: "10", name: "Deltagare 10", winner: false },
-              player2: { id: "12", name: "Deltagare 12", winner: true },
+              player1: { id: "10", name: "Deltagare 10", winner: false, points: 4 },
+              player2: { id: "12", name: "Deltagare 12", winner: true, points: 6 },
             },
             {
-              player1: { id: "10", name: "Deltagare 10", winner: false },
-              player2: { id: "12", name: "Deltagare 12", winner: true },
+              player1: { id: "10", name: "Deltagare 10", winner: false, points: 10 },
+              player2: { id: "12", name: "Deltagare 12", winner: true, points: 15 },
             }
           ]
         },  
@@ -37,12 +48,12 @@ export default {
         //second game
           games: [
             {
-              player1: { id: "2", name: "Deltagare 2", winner: false },
-              player2: { id: "4", name: "Deltagare 4", winner: true },
+              player1: { id: "2", name: "Deltagare 2", winner: false, points: 1 },
+              player2: { id: "4", name: "Deltagare 4", winner: true, points: 12 },
             },
             {
-              player1: { id: "5", name: "Deltagare 5", winner: false },
-              player2: { id: "8", name: "Deltagare 8", winner: true },
+              player1: { id: "5", name: "Deltagare 5", winner: false, points: 82 },
+              player2: { id: "8", name: "Deltagare 8", winner: true, points: 2 },
             }
           ]
         },
@@ -128,7 +139,7 @@ export default {
     <template v-slot:player="{ player }">
       <div class="popup-trigger" @click.stop="toggleDropdown(player)">
         <span :class="getPlayerClass(player)">
-          {{ player.name }}
+          {{ player.name }} <div class="points-container"><span class="points">{{ player.points }}</span></div>
         </span>
       </div>
       <div v-if="player.showDropdown" class="dropdown">
@@ -149,6 +160,19 @@ export default {
 </template>
 
 <style>
+
+.points-container {
+  display: inline-grid;
+  background-color: black;
+  border-radius: 3px;
+  margin-left: 100px;
+  width: 20px;
+}
+
+.points{
+  text-align: center;
+}
+
 
 .box {
   position:absolute;
