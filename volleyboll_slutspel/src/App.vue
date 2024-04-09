@@ -263,6 +263,42 @@ export default {
   display: none;
   }
 
+  
+@media only screen and (max-width:450px){
+  .phone-img {
+    display: flex;
+    height: 40%;
+    width: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 150; 
+  }
+  .phone-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 128, 0); 
+    z-index: 100; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 149;
+  }
+  .nav {
+    background-color: blue;
+    position:fixed;
+    top:0%;
+    left:0%;
+    right:0%;
+    height:4.5em;
+    z-index:200;
+  }
+}
+
 @media only screen and (max-height:600px){
   .box {
   position:absolute;
@@ -273,5 +309,6 @@ export default {
   right:0px;
   bottom:auto;
 }
+
 }
 </style>
